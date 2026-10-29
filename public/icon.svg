@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#15803d" />
+      <stop offset="100%" stop-color="#166534" />
+    </linearGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#000" flood-opacity="0.3" />
+    </filter>
+  </defs>
+  <!-- Background -->
+  <rect width="512" height="512" rx="104" fill="url(#bgGrad)" />
+  
+  <!-- Outer Ring Accent -->
+  <circle cx="256" cy="256" r="210" fill="none" stroke="#ffffff" stroke-opacity="0.12" stroke-width="8" />
+
+  <!-- Chef Hat / Cloche Icon with Peso sign -->
+  <g filter="url(#shadow)" fill="#ffffff">
+    <!-- Cloche Lid -->
+    <path d="M256 128 C246 128 238 134 234 142 C204 148 180 172 176 204 C152 216 136 242 136 272 C136 288 144 300 152 308 L360 308 C368 300 376 288 376 272 C376 242 360 216 336 204 C332 172 308 148 278 142 C274 134 266 128 256 128 Z" fill="#ffffff" />
+    
+    <!-- Tray Base -->
+    <rect x="120" y="324" width="272" height="20" rx="10" fill="#facc15" />
+    <path d="M100 352 L412 352 A10 10 0 0 1 422 362 L422 366 A10 10 0 0 1 412 376 L100 376 A10 10 0 0 1 90 366 L90 362 A10 10 0 0 1 100 352 Z" fill="#ffffff" />
+    
+    <!-- Philippine Peso Symbol Overlay Badge -->
+    <circle cx="256" cy="242" r="42" fill="#15803d" />
+    <text x="256" y="260" font-family="Arial, Helvetica, sans-serif" font-size="52" font-weight="900" fill="#facc15" text-anchor="middle" dominant-baseline="central">₱</text>
+  </g>
+  
+  <!-- Subtle Calculator Grid / Recipe Dots -->
+  <g fill="#facc15" opacity="0.9">
+    <circle cx="206" cy="414" r="10" />
+    <circle cx="256" cy="414" r="10" />
+    <circle cx="306" cy="414" r="10" />
+  </g>
+</svg>
