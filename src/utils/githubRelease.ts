@@ -1,5 +1,5 @@
 export const GITHUB_REPO_STORAGE_KEY = 'food_costing_github_repo_v1';
-export const DEFAULT_GITHUB_REPO = 'https://github.com/Pandagaming15/costing';
+export const DEFAULT_GITHUB_REPO = 'https://github.com/Pandagaming15/Costing-Worksheet/releases/tag/costing';
 
 /**
  * Returns the current configured GitHub repository URL.
