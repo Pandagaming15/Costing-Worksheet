@@ -52,8 +52,8 @@ jobs:
 
       - name: Install Capacitor
         run: |
-          npm install @capacitor/core@^7 @capacitor/android@^7
-          npm install --save-dev @capacitor/cli@^7
+          npm install @capacitor/core@^7 @capacitor/android@^8
+          npm install --save-dev @capacitor/cli@^8
 
       - name: Build React and Vite app
         run: npm run build
