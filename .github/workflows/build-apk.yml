@@ -1,15 +1,18 @@
+
 name: Build Costing Worksheet APK
 
 on:
-  push:
-    branches: [main]
   workflow_dispatch:
+  push:
+    branches:
+      - main
 
 permissions:
   contents: read
 
 jobs:
   build-android:
+    name: Build Android APK
     runs-on: ubuntu-latest
 
     steps:
@@ -19,28 +22,33 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 22
-          cache: npm
+          node-version: '22'
+          package-manager-cache: false
 
       - name: Setup Java
         uses: actions/setup-java@v4
         with:
           distribution: temurin
-          java-version: 21
+          java-version: '21'
 
       - name: Setup Android SDK
         uses: android-actions/setup-android@v3
 
       - name: Install npm dependencies
-        run: npm ci
+        run: npm install
 
-      - name: Install Capacitor CLI and Android
+      - name: Install Capacitor packages
         run: |
+          npm install @capacitor/core@^8
           npm install -D @capacitor/cli@^8
           npm install @capacitor/android@^8
 
       - name: Build React and Vite app
         run: npm run build
+
+      - name: Check Capacitor configuration
+        run: |
+          test -f capacitor.config.ts -o -f capacitor.config.json -o -f capacitor.config.js
 
       - name: Add Android platform if missing
         run: |
@@ -62,6 +70,7 @@ jobs:
       - name: Upload APK
         uses: actions/upload-artifact@v4
         with:
-          name: cooked-product-costing-apk
+          name: costing-worksheet-apk
           path: android/app/build/outputs/apk/debug/app-debug.apk
           if-no-files-found: error
+          retention-days: 7
