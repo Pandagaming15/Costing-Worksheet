@@ -185,7 +185,7 @@ export const FormulasTab: React.FC<FormulasTabProps> = ({ calcs, currency, theme
           </div>
 
           <div className="mathline text-sm text-slate-800 dark:text-slate-200">
-            = {formatMoney(totalSales, currency)} − {(directCost, currency)}
+            = {formatMoney(totalSales, currency)} − {formatMoney(directCost, currency)}
           </div>
 
           <div className="mathline final-math">
