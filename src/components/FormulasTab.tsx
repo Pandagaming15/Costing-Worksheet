@@ -177,7 +177,7 @@ export const FormulasTab: React.FC<FormulasTabProps> = ({ calcs, currency, theme
         <div className="formula-box">
           <div className={`text-xs font-bold ${themeColor.accentText} mb-1`}>Profit formula:</div>
           <div className="formula-name text-sm text-slate-800 dark:text-slate-200">
-            Total Profit = (Selling Price per Serving × Number of Servings) − Total Production Cost
+            Total Profit = (Selling Price per Serving × Number of Servings) − Production Cost
           </div>
 
           <div className="mathline text-sm text-slate-800 dark:text-slate-200">
@@ -185,7 +185,7 @@ export const FormulasTab: React.FC<FormulasTabProps> = ({ calcs, currency, theme
           </div>
 
           <div className="mathline text-sm text-slate-800 dark:text-slate-200">
-            = {formatMoney(totalSales, currency)} − {formatMoney(totalCost, currency)}
+            = {formatMoney(totalSales, currency)} − {directCost, currency)}
           </div>
 
           <div className="mathline final-math">
