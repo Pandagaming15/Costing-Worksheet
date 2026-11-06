@@ -73,7 +73,7 @@ export function computeCosting(
   const pricePerServing = unitCost + profitPerServing;
   const roundedPrice = Math.round((pricePerServing + Number.EPSILON) * 100) / 100;
   const totalSales = roundedPrice * servings;
-  const batchProfit = totalSales - totalCost;
+  const batchProfit = totalSales - directCost;
   const profitPerServingFromBatch = servings > 0 ? batchProfit / servings : 0;
 
   return {
